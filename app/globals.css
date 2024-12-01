@@ -8,17 +8,22 @@ html{
 
 
 
+
 body{
-  font-family: "Poppins", "Roboto" serif;
+  font-family: "Poppins", "Roboto" serif; 
 }
 
 body::-webkit-scrollbar{
   display: none;
+
 }
 
 @layer utilities{
   .heading1{
     @apply font-poppins text-[50px] lg:text-[60px] xl:text-[80px] lg:text-start text-center text-primary font-[700] leading-[70px] lg:leading-[101px]
+  }
+  .heading2{
+    @apply font-poppins text-[25px] lg:text-[30px] xl:text-[35px]  text-banal font-[700] 
   }
 
   .flex-center{
@@ -28,6 +33,7 @@ body::-webkit-scrollbar{
   .flex-start{
     @apply flex justify-start items-start
   }
+
 
   .flex-end{
     @apply flex justify-end items-end
@@ -42,7 +48,7 @@ body::-webkit-scrollbar{
   }
 
   .base-regular{
-    @apply  font-roboto font-[400] text-[25px] text-textbase
+    @apply  font-roboto font-[400] text-[15px] md:text-[20px] lg:text-[25px] text-banal
   }
 
   .mobileMenu{
@@ -54,9 +60,21 @@ body::-webkit-scrollbar{
   }
 
   .pharagraph{
-    @apply font-roboto text-[25px] font-[500] leading-[40px] text-textbase text-center lg:text-start
+    @apply font-roboto text-[25px] font-[500] leading-[40px] text-banal text-center lg:text-start
+  }
+
+  .suptitle{
+    @apply font-roboto text-[25px] font-medium text-dark   
   }
   
+  .sectionCard{
+    @apply bg-[#f6f6f6] rounded-xl p-[20px]
+  }
+
+  .sectionMargins{
+    @apply mt-32
+  }
+
 }
 
 
@@ -69,8 +87,8 @@ body::-webkit-scrollbar{
     --secondary: #A5D6A7;
     --accent: #009688;
     --dark: #2E7D32;
-    --text-base-color: #333333
-    --background: 0 0% 100%;
+    --text-base: #333333;
+    --background: #ECFFC6;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;

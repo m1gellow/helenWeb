@@ -2,6 +2,7 @@ import Image from "next/image";
 import Teacher from "../app/Teacher.jpg";
 import { Button } from "./ui/button";
 
+
 const Header = () => {
   return (
     <div className="flex-center max-w-screen-2xl mt-72 px-4 lg:mt-12 h-screen w-full mx-auto">

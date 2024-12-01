@@ -52,7 +52,7 @@ export default {
 			secondary: "var(--secondary)",
 			accent: "var(--accent)",
 			dark: "var(--dark)",
-			textbase: "var(--text-base-color)"
+			banal: "var(--text-base)"
 
   		},
   		borderRadius: {
