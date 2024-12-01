@@ -12,12 +12,12 @@ interface SectionNameProps {
 
 const SectionName: React.FC<SectionNameProps> = (props) => {
 
-  const baseClasses = "flex flex-col justify-center "
+  const baseClasses = "flex flex-col justify-center"
 
   const variantClasses = {
-    start: " flex items-start justify-start",
-    center: " flex items-center justify-center",
-    end: " flex items-end",
+    start: " flex items-start justify-start text-start",
+    center: " flex items-center justify-center text-center",
+    end: " flex items-end text-end",
 
   }
 

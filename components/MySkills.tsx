@@ -28,9 +28,9 @@ const MySkills = () => {
           </div>
 
           <div className="lg:w-1/3 items-center lg:items-start flex flex-col gap-4">
-            <h2 className="heading2">I am teacher and make ultimate things</h2>
+            <h2 className="heading2 text-center  lg:text-start">I am teacher and make ultimate things</h2>
 
-            <p className="body-text">
+            <p className="body-text lg:text-start text-center">
               Enjoy team diversity and increase their networks among others
               people in various fields by Enjoy team diversity and increase
               their networks among others people in various fields by Enjoy team
