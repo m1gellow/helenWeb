@@ -1,8 +1,10 @@
+
 import React from "react";
 import Teacher from "../app/Teacher.jpg";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import SectionName from "./SectionName";
+
 
 const About = () => {
   return (

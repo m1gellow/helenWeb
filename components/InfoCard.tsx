@@ -9,15 +9,18 @@ interface InfoCardProps {
 }
 
 const InfoCard: React.FC<InfoCardProps> = (props) => {
-
-    const {title, description} = props
+  const { title, description } = props;
 
   return (
-    <Card className="w-[350px]">
-      <CardHeader>
-        <Pen size={47}/>
-        <CardTitle>{title}</CardTitle>
-      <CardDescription>{description}</CardDescription>
+    <Card className="max-w-[426px] border-none rounded-[35px]   duration-75 shadow-md">
+      <CardHeader className="flex flex-col gap-[30px]">
+        <Pen size={47} />
+        <CardTitle>
+          <h2 className="heading2">{title}</h2>
+        </CardTitle>
+        <CardDescription>
+          <p className="body-text">{description}</p>
+        </CardDescription>
       </CardHeader>
     </Card>
   );
