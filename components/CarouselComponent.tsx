@@ -9,7 +9,6 @@ import {
 import InfoCard from "./InfoCard";
 
 
-type variant  = "review" | "skills"
 
 interface InfoItem {
     title: string;
