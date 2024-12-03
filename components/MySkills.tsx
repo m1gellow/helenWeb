@@ -78,7 +78,7 @@ const MySkills = () => {
           </div>
         </div>
 
-        <div className="flex flex-col justify-center items-center gap-4">
+        <div className="flex flex-col px-5 justify-center items-center gap-4">
           <p className="paragraph">Листай</p>
           <Carousel content={info} variant="skills" />
         </div>

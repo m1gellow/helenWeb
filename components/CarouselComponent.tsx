@@ -25,7 +25,7 @@ interface CarouselProps {
 
 const Carousel: React.FC<CarouselProps> = ({ content, variant }) => {
   return (
-    <UIDCarousel className="md:w-full max-w-sm md:max-w-full">
+    <UIDCarousel className="md:w-full px-5 max-w-sm md:max-w-full">
       <div className=" flex-between md:hidden">
         <ArrowLeft color="gray" />
 
