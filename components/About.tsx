@@ -8,7 +8,7 @@ import SectionName from "./SectionName";
 
 const About = () => {
   return (
-    <div className="max-w-screen-2xl mx-auto px-4  flex-center w-full sectionMargins">
+    <div className="max-w-screen-2xl mx-auto px-4 mt-52 flex-center w-full md:sectionMargins">
       <div className="flex-col flex  gap-[100px]">
         <SectionName
           variant="center"

@@ -6,10 +6,10 @@ html{
   scroll-behavior: smooth;
 }
 
-
 *{
-  cursor: none !important; /* Hides the default cursor */
+  cursor: none;
 }
+
 
 body{
   font-family: "Poppins", "Roboto" serif; 
@@ -22,7 +22,7 @@ body::-webkit-scrollbar{
 
 @layer utilities{
   .heading1{
-    @apply font-poppins text-[50px] lg:text-[60px] xl:text-[80px] lg:text-start text-center text-primary font-[700] leading-[70px] lg:leading-[101px]
+    @apply font-poppins text-[50px] lg:text-[60px] xl:text-[70px] lg:text-start text-center text-primary font-[700] leading-[70px] 
   }
   .heading2{
     @apply font-poppins text-[25px] lg:text-[30px] xl:text-[35px]  text-banal font-[700] 
@@ -74,7 +74,7 @@ body::-webkit-scrollbar{
   }
 
   .sectionMargins{
-    @apply mt-32
+    @apply mt-52
   }
 
   .blogCard{

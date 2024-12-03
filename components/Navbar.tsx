@@ -1,12 +1,31 @@
 "use client";
 import { pageConfig } from "../app/page.config";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
+
+  let lastScrollY = 0;
+
+  const handleScroll = () => {
+    if (typeof window !== 'undefined') {
+      const currentScrollY = window.scrollY;
+      setVisible(lastScrollY > currentScrollY || currentScrollY < 10);
+      lastScrollY = currentScrollY;
+    }
+  }
+
+
+  useEffect(() => {
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+          window.removeEventListener('scroll', handleScroll);
+      };
+  }, []);
 
   const handleOpenMenu = () => {
     setIsOpen(!isOpen);
@@ -14,7 +33,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="flex-center bg-white border-b fixed z-50 top-0 w-full py-5">
+    <nav className={`flex-center bg-white border-b fixed z-50 top-0 w-full py-5 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'}`}>
       <div className="flex-between mx-auto w-full max-w-screen-2xl px-4 ">
         <h1 className="font-poppins font-bold text-3xl">Logo</h1>
 
@@ -23,19 +42,19 @@ const Navbar: React.FC = () => {
             <Link href={pageConfig.home}>Домой</Link>
           </li>
           <li>
-            <Link href={pageConfig.home}>О нас</Link>
+            <Link href={pageConfig.about}>О нас</Link>
           </li>
           <li>
-            <Link href={pageConfig.home}>Услуги</Link>
+            <Link href={pageConfig.review}>Услуги</Link>
           </li>
           <li>
-            <Link href={pageConfig.home}>Проекты</Link>
+            <Link href={pageConfig.skills}>Проекты</Link>
           </li>
           <li>
             <Link href={pageConfig.home}>Резюме</Link>
           </li>
           <li>
-            <Link href={pageConfig.home}>Блог</Link>
+            <Link href={pageConfig.blog}>Блог</Link>
           </li>
           <li>
             <Link href={pageConfig.home}>Контакты</Link>
