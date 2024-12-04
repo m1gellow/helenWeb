@@ -1,6 +1,5 @@
 import About from "@/components/About";
 import Blog from "@/components/Blog";
-import CustomCursor from "@/components/CustomCursor";
 import Header from "@/components/Header";
 import MySkills from "@/components/MySkills";
 import Review from "@/components/Review";
@@ -14,9 +13,6 @@ const Home = async () => {
 
   return (
     <main>
-      <div className="relative z-50">
-        <CustomCursor />
-      </div>
       <div className="relative z-10">
         <section id="header">
           <Header data={headerData} />

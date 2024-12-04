@@ -1,6 +1,6 @@
 import React from "react";
 import SectionName from "./SectionName";
-import Teacher from "../app/Teacher.jpg"; // Ensure this path is correct
+import Helen from "../app/Helen.jpg"; 
 import Image from "next/image";
 import { Button } from "./ui/button";
 import Carousel from "./CarouselComponent";
@@ -49,9 +49,9 @@ const MySkills = () => {
           sectionName="Skills"
         />
         <div className="flex flex-col items-center justify-center px-4 lg:flex-row gap-10">
-          <div className="relative md:w-2/3 h-[400px] w-full"> 
+          <div className="relative w-full h-[500px] "> 
             <Image
-              src={Teacher}
+              src={Helen}
               alt="My skills image"
               layout="fill"
               objectFit="cover"
@@ -78,7 +78,7 @@ const MySkills = () => {
           </div>
         </div>
 
-        <div className="flex flex-col px-5 justify-center items-center gap-4">
+        <div className="flex flex-col  justify-center items-center gap-4">
           <p className="paragraph">Листай</p>
           <Carousel content={info} variant="skills" />
         </div>

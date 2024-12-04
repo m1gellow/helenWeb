@@ -1,6 +1,6 @@
 
 import React from "react";
-import Teacher from "../app/Teacher.jpg";
+import Helen from "../app/Helen.jpg";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import SectionName from "./SectionName";
@@ -18,7 +18,7 @@ const About = () => {
         />
         <div className="flex flex-col lg:flex-row lg:flex-center  gap-10">
           <div className="lg:w-1/2">
-            <Image src={Teacher} alt="about image" className="rounded-xl" />
+            <Image src={Helen} alt="about image" className="rounded-xl" />
           </div>
           <div className="lg:flex-1 flex-col flex gap-5">
             <div className="sectionCard">

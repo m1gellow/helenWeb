@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className={`flex-center bg-white border-b fixed z-50 top-0 w-full py-5 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'}`}>
+    <nav className={`flex-center bg-white border-b fixed z-20 top-0 w-full py-5 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'}`}>
       <div className="flex-between mx-auto w-full max-w-screen-2xl px-4 ">
         <h1 className="font-poppins font-bold text-3xl">Logo</h1>
 
@@ -80,7 +80,7 @@ const Navbar: React.FC = () => {
               <X color={"#4CAF50"} size={47} />
             </button>
           </div>
-          <ul className="flex flex-col text-3xl gap-[40px]  items-center mt-10 space-y-4">
+          <ul className="flex flex-col text-3xl gap-[40px] bg-white items-center mt-10 space-y-4">
             <li>
               <Link href={pageConfig.home}>Домой</Link>
             </li>

@@ -17,3 +17,12 @@ export const getHeaderData = async() => {
         console.log(err)
     }
 }
+
+export const getPostDataByTag = async(slug: string) =>{
+    try{
+        return slug
+    }catch(err){
+        console.log(err)
+    }
+}
+

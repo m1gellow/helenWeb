@@ -17,7 +17,7 @@ const SectionName: React.FC<SectionNameProps> = (props) => {
 
   const variantClasses = {
     start:
-      " flex items-center justify-center md:items-start md:justify-start text-start",
+      " flex items-center justify-center xl:items-start md:justify-start ",
     center: " flex items-center justify-center text-center",
     end: " flex items-end text-end",
   };

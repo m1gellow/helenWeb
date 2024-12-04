@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image";
-import Teacher from "../app/Teacher.jpg";
+import Helen from "../app/Helen.jpg";
 import { Button } from "./ui/button";
 import { motion } from 'framer-motion';
 import { HeaderData } from "@/lib/types";
@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({data}) => {
          initial={{ opacity: 0, y: 50 }} // Initial state: invisible and slightly below
          whileInView={{ opacity: 1, y: 0 }} // Animate to visible and original position
          transition={{ duration: 0.8, ease: 'easeOut' }} 
-        className="flex-1 flex flex-col items-center lg:items-start gap-8">
+        className="flex flex-col items-center lg:items-start gap-8">
           <span className="base-regular">{data.greeting}</span>
           <h1 className="heading1">{data.title}</h1>
           <p className="pharagraph lg:w-2/3">
@@ -33,9 +33,9 @@ const Header: React.FC<HeaderProps> = ({data}) => {
           </div>
         </motion.div>
 
-        <div className="relative  h-[400px] flex-1"> 
+        <div className="relative w-full h-[400px]"> 
             <Image
-              src={Teacher}
+              src={Helen}
               alt="My skills image"
               layout="fill"
               objectFit="cover"
