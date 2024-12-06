@@ -2,24 +2,17 @@ import Image from 'next/image';
 import React from 'react';
 import Helen from '../../../../Helen.jpg'
 import { Button } from '@/components/ui/button';
-import { getPostDataByTag } from '@/sanity/actions';
-
-type Params = Promise<{slug: string}>;
 
 
-const page = async({params}: {params: Params}) => {
-    
-    const {slug} = await params;
-
-    const data = await getPostDataByTag(slug);
 
 
+const page = async() => {
   
     return (
     <div className="flex-center max-w-screen-2xl mt-[200px] px-4  w-full mx-auto">
       
         <div className='flex flex-col gap-12 items-center justify-center'>
-            <span className='base-regular'>Blog - {data}</span>
+            <span className='base-regular'>Blog</span>
             <h1 className='heading1'>World’s Most Famous App
             Developers and Designers.</h1>
             <div className="relative w-full h-[700px] "> 

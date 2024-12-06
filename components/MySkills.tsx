@@ -1,86 +1,55 @@
 import React from "react";
 import SectionName from "./SectionName";
-import Helen from "../app/Helen.jpg"; 
 import Image from "next/image";
-import { Button } from "./ui/button";
 import Carousel from "./CarouselComponent";
+import { getSkillCards, getSkillsData } from "@/sanity/actions";
+import {skillCardsData, skillsData } from "@/lib/types";
+import LinkButton from "./LinkButton";
 
-const info = [
-  {
-    title: "hello",
-    description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  },
-  {
-    title: "hello",
-    description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  },
-  {
-    title: "привет",
-    description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  },
-  {
-    title: "привет",
-    description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  },
-  {
-    title: "привет",
-    description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  },
-  {
-    title: "привет",
-    description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  },
-];
+export const revalidate = 30;
 
-const MySkills = () => {
+const MySkills = async() => {
+
+  const data: skillsData = await getSkillsData();
+
+  const cardsData: skillCardsData  = await getSkillCards();
+
+
   return (
     <div className="max-w-screen-2xl mx-auto flex-center w-full sectionMargins">
       <div className="flex-col flex gap-10 ">
         <SectionName
           variant="start"
-          title="Мои навыки!"
-          description="Enjoy team diversity and increase their networks among others people in various fields by"
+          title={data.sectionTitle}
+          description={data.sectionDescription}
           sectionName="Skills"
         />
         <div className="flex flex-col items-center justify-center px-4 lg:flex-row gap-10">
           <div className="relative w-full h-[500px] "> 
             <Image
-              src={Helen}
+              src={data.image}
               alt="My skills image"
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{ objectFit: 'cover' }}
               className="rounded-xl"
             />
           </div>
 
           <div className="lg:w-1/3 w-full items-center lg:items-start flex flex-col gap-4">
             <h2 className="heading2 text-center lg:text-start">
-              I am a teacher and make ultimate things
+             {data.title}
             </h2>
 
             <p className="body-text lg:text-start text-center">
-              Enjoy team diversity and increase their networks among others
-              people in various fields by Enjoy team diversity and increase
-              their networks among others people in various fields by Enjoy team
-              diversity and increase their networks among others people in
-              various fields by Enjoy team diversity and increase their networks
-              among{" "}
+             {data.description}
             </p>
-            <Button variant={"default"} className="">
-              Связаться
-            </Button>
+            <LinkButton text={data.Button} href={data.ButtonLink} variant="default"/>
           </div>
         </div>
 
         <div className="flex flex-col  justify-center items-center gap-4">
           <p className="paragraph">Листай</p>
-          <Carousel content={info} variant="skills" />
+          <Carousel cards={cardsData.skillsCards} variant="skills" />
         </div>
       </div>
     </div>

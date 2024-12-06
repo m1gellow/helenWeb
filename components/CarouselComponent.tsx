@@ -1,3 +1,4 @@
+
 import React from "react";
 import {
   Carousel as UIDCarousel,
@@ -8,48 +9,38 @@ import {
 } from "@/components/ui/carousel";
 import InfoCard from "./InfoCard";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { skillCard } from "@/lib/types";
+
 
 type CarouselType = "skills" | "review";
 
-interface InfoItem {
-  title: string;
-  description: string;
-}
-
-type InfoArray = InfoItem[];
 
 interface CarouselProps {
-  content: InfoArray;
+  cards: skillCard[];
   variant: CarouselType;
 }
 
-const Carousel: React.FC<CarouselProps> = ({ content, variant }) => {
+const Carousel: React.FC<CarouselProps> = ({cards, variant}) => {
+
   return (
     <UIDCarousel className="md:w-full px-5 max-w-sm lg:max-w-full">
-      <div className=" flex-between md:hidden">
-        <ArrowLeft color="gray" />
-
-        <ArrowRight color="gray" />
-      </div>
-
-      <CarouselContent>
-        {content.map((inf, index) => (
-          <CarouselItem
-            key={index}
-            className={`${variant === "review" ? "md:basis-1/2 lg:basis-1/2" : "md:basis-1/2 lg:basis-1/3"}`}
-          >
-            <div className="p-1">
-              <InfoCard
-                title={inf.title}
-                description={inf.description}
-                variant={variant}
-              />
-            </div>
+      <CarouselContent className="-ml-1">
+        {cards?.map((card, idx) => (
+          <CarouselItem key={idx} className="w-full basis-3/3  lg:basis-1/3">
+            <InfoCard
+            title={card.CardTitle}
+            description={card.CardDescription}
+            variant={variant}
+            />
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="hidden  md:flex" />
-      <CarouselNext className="hidden  md:flex" />
+      <CarouselPrevious>
+        <ArrowLeft />
+      </CarouselPrevious>
+      <CarouselNext>
+        <ArrowRight />
+      </CarouselNext>
     </UIDCarousel>
   );
 };

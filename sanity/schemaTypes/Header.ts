@@ -1,6 +1,6 @@
 import { Rule } from "sanity"
 
-const header = {
+export const Header = {
     name: "header",
     title: "header",
     type: "document",
@@ -40,8 +40,14 @@ const header = {
                 list: ["Блог", "Мой блог", "Новости", "Читать", "Читать блог"]
             }
         },
-      
+        {
+            name: "headerImage",
+            title: "Image of the header",
+            type: "image",
+            validation: (Rule: Rule) => Rule.required(),
+            options:{
+                hotspot: true,
+            }
+        }
     ]
 }
-
-export default header

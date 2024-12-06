@@ -7,7 +7,7 @@ html{
 }
 
 *{
-  cursor: none;
+  cursor: none !important;
 }
 
 
@@ -54,7 +54,7 @@ body::-webkit-scrollbar{
   }
 
   .mobileMenu{
-    @apply fixed top-0 right-0 w-3/4  h-max px-5 bg-white shadow-lg z-50 transition-transform transform translate-x-0
+    @apply fixed top-0 right-0 w-3/4 rounded-md py-10 h-max px-5 bg-white shadow-lg z-50 transition-transform transform translate-x-0
   }
 
   .icons{

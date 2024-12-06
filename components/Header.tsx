@@ -1,6 +1,5 @@
 'use client'
 import Image from "next/image";
-import Helen from "../app/Helen.jpg";
 import { Button } from "./ui/button";
 import { motion } from 'framer-motion';
 import { HeaderData } from "@/lib/types";
@@ -35,10 +34,10 @@ const Header: React.FC<HeaderProps> = ({data}) => {
 
         <div className="relative w-full h-[400px]"> 
             <Image
-              src={Helen}
+              src={data.image}
               alt="My skills image"
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{ objectFit: 'cover' }}
               className="rounded-xl"
             />
           </div>
