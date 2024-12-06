@@ -35,10 +35,10 @@ const Carousel: React.FC<CarouselProps> = ({cards, variant}) => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious>
+      <CarouselPrevious className="md:flex hidden">
         <ArrowLeft />
       </CarouselPrevious>
-      <CarouselNext>
+      <CarouselNext className="md:flex hidden">
         <ArrowRight />
       </CarouselNext>
     </UIDCarousel>
