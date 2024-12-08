@@ -39,6 +39,9 @@ sectionTitle,
         console.log(err)
     }
 }
+
+
+
 export const getSkillsData = async() => {
     try{
        const skillsData = await client.fetch(
@@ -49,6 +52,10 @@ sectionTitle,
    "image": skillsImage.asset->url,
   title,
   description,
+  skillsCards[]->{
+            CardTitle,
+            CardDescription
+        },
   Button,
   ButtonLink
 }[0]`
@@ -60,25 +67,22 @@ sectionTitle,
 }
 
 
-export const getSkillCards = async() => {
-    try{
-       const skillsCards = await client.fetch(
-        groq`
-        
-       *[_type == "skills"]{
-
-        skillsCards[]->{
-            CardTitle,
-            CardDescription
-        }
-    }[0]`
-       )
-       return skillsCards;
-    }catch(err){
-        console.log(err)
-    }
+export const getReviewData = async() => {
+  try{
+    const reviewData = await client.fetch(
+      groq`
+      *[_type == "review"]{
+  name,
+    reviewContent,
+    "image":photo.asset->url
 }
-
+      `
+    )
+    return reviewData;
+ }catch(err){
+     console.log(err)
+ }
+}
 
 
 

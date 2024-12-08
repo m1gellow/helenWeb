@@ -15,7 +15,7 @@ const Header: React.FC<HeaderProps> = ({data}) => {
 
   return (
     <div className="flex-center max-w-screen-2xl mt-72 px-4 lg:mt-12 h-screen w-full mx-auto">
-      <div className="lg:flex-row  flex flex-col lg:gap-8 gap-20 items-center ">
+      <div className="flex relative xl:flex-row flex-col lg:gap-8 gap-20 items-center ">
         <motion.div
          initial={{ opacity: 0, y: 50 }} // Initial state: invisible and slightly below
          whileInView={{ opacity: 1, y: 0 }} // Animate to visible and original position
@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({data}) => {
           <p className="pharagraph lg:w-2/3">
             {data.headerDescription}
           </p>
-          <div className="flex gap-3 flex-col lg:flex-row">
+          <div className="flex-center gap-3  flex-wrap">
             <Button variant={"default"}>{data.mainButtonText} </Button>
             <Button variant={"outline"}>{data.secondaryButtonText}</Button>
           </div>

@@ -29,18 +29,20 @@ export interface skillsData{
   title: string,
   description: string,
   Button: string,
-  skillsCards: skillCardsData;
-  ButtonLink: string,
-}
-export interface skillCardsData{
   skillsCards:{
-      CardTitle: string;
-  CardDescription: string;
-  }[]
-
+    CardTitle: string;
+CardDescription: string;
+}[];
+  ButtonLink: string,
 }
 export interface skillCard{
 
       CardTitle: string;
   CardDescription: string;
+}
+
+export interface reviewCard{
+  name: string;
+  image: string;
+  reviewContent: string;
 }

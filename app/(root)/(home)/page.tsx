@@ -1,5 +1,7 @@
 import About from "@/components/About";
 import Blog from "@/components/Blog";
+import Contacts from "@/components/Contacts";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MySkills from "@/components/MySkills";
 import Review from "@/components/Review";
@@ -28,6 +30,12 @@ const Home = async () => {
         </section>
         <section id="review">
           <Review />
+        </section>
+        <section id="contacts">
+          <Contacts />
+        </section>
+        <section id="footer">
+          <Footer />
         </section>
       </div>
     </main>

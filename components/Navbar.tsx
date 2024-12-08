@@ -45,19 +45,16 @@ const Navbar: React.FC = () => {
             <Link href={pageConfig.about}>О нас</Link>
           </li>
           <li>
-            <Link href={pageConfig.review}>Услуги</Link>
+            <Link href={pageConfig.review}>Отзывы</Link>
           </li>
           <li>
-            <Link href={pageConfig.skills}>Проекты</Link>
-          </li>
-          <li>
-            <Link href={pageConfig.home}>Резюме</Link>
+            <Link href={pageConfig.skills}>Навыки</Link>
           </li>
           <li>
             <Link href={pageConfig.blog}>Блог</Link>
           </li>
           <li>
-            <Link href={pageConfig.home}>Контакты</Link>
+            <Link href={pageConfig.contacts}>Контакты</Link>
           </li>
         </ul>
         <div className="lg:hidden flex-center flex-col ">
@@ -81,27 +78,24 @@ const Navbar: React.FC = () => {
             </button>
           </div>
           <ul className="flex flex-col text-3xl gap-[40px] bg-white items-center mt-10 space-y-4">
-            <li>
-              <Link href={pageConfig.home}>Домой</Link>
-            </li>
-            <li>
-              <Link href={pageConfig.home}>О нас</Link>
-            </li>
-            <li>
-              <Link href={pageConfig.home}>Услуги</Link>
-            </li>
-            <li>
-              <Link href={pageConfig.home}>Проекты</Link>
-            </li>
-            <li>
-              <Link href={pageConfig.home}>Резюме</Link>
-            </li>
-            <li>
-              <Link href={pageConfig.home}>Блог</Link>
-            </li>
-            <li>
-              <Link href={pageConfig.home}>Контакты</Link>
-            </li>
+          <li>
+            <Link href={pageConfig.home}>Домой</Link>
+          </li>
+          <li>
+            <Link href={pageConfig.about}>О нас</Link>
+          </li>
+          <li>
+            <Link href={pageConfig.review}>Отзывы</Link>
+          </li>
+          <li>
+            <Link href={pageConfig.skills}>Навыки</Link>
+          </li>
+          <li>
+            <Link href={pageConfig.blog}>Блог</Link>
+          </li>
+          <li>
+            <Link href={pageConfig.contacts}>Контакты</Link>
+          </li>
           </ul>
         </div>
       )}

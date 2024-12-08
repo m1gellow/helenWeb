@@ -9,31 +9,30 @@ import {
 } from "@/components/ui/carousel";
 import InfoCard from "./InfoCard";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { skillCard } from "@/lib/types";
-
-
-type CarouselType = "skills" | "review";
+import { reviewCard} from "@/lib/types";
 
 
 interface CarouselProps {
-  cards: skillCard[];
-  variant: CarouselType;
+  content: reviewCard[]
 }
 
-const Carousel: React.FC<CarouselProps> = ({cards, variant}) => {
+const ReviewCarousel: React.FC<CarouselProps> = ({content}) => {
 
   return (
-    <UIDCarousel className="md:w-full px-5 max-w-sm lg:max-w-full">
+    <UIDCarousel className="md:w-full px-5 max-w-sm  lg:max-w-full">
       <CarouselContent className="-ml-1">
-        {cards?.map((card, idx) => (
-          <CarouselItem key={idx} className="w-full basis-3/3  lg:basis-1/3">
-            <InfoCard
-            title={card.CardTitle}
-            description={card.CardDescription}
-            variant={variant}
+        {content?.map((info, idx) => (
+        
+          <CarouselItem key={idx} className="w-full basis-3/3  lg:basis-2/3">
+               <InfoCard
+               variant="review"
+            title={info.name}
+            description={info.reviewContent}
+            image={info.image}
             />
           </CarouselItem>
         ))}
+       
       </CarouselContent>
       <CarouselPrevious className="md:flex hidden">
         <ArrowLeft />
@@ -45,4 +44,4 @@ const Carousel: React.FC<CarouselProps> = ({cards, variant}) => {
   );
 };
 
-export default Carousel;
+export default ReviewCarousel;

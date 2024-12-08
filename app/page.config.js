@@ -3,7 +3,8 @@ class PageConfig{
     about = "#about";
     skills = "#skills";
     review = "#review";
-    blog = "#blog"
+    blog = "#blog";
+    contacts = "#contacts"
 }
 
 export const pageConfig = new PageConfig() 

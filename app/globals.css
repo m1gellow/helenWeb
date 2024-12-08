@@ -53,6 +53,10 @@ body::-webkit-scrollbar{
   .mobileMenu{
     @apply fixed top-0 right-0 w-3/4 rounded-md py-10 h-max px-5 bg-white shadow-lg z-50 transition-transform transform translate-x-0
   }
+  .contactsLink{
+    @apply border rounded-[50%] px-5 py-5 hover:border-pink-500 transition-colors duration-75 
+}
+
 
   .icons{
     @apply hover:scale-110 cursor-pointer
@@ -84,6 +88,10 @@ body::-webkit-scrollbar{
     z-index: 50;
   }
 
+  .contactsLinks{
+    @apply body-text hover:text-primary duration-75
+  }
+
 }
 
 
@@ -93,6 +101,11 @@ body::-webkit-scrollbar{
 @layer base {
   :root {
     --primary-color: #4CAF50;
+    --inst-color: #C13584;
+    --whats-color: #28D146;
+    --tg-color: #2AABEE;
+    --vk-color: #0077ff;
+
     --secondary: #A5D6A7;
     --accent: #009688;
     --dark: #2E7D32;

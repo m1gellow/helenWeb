@@ -1,9 +1,9 @@
 import React from "react";
 import SectionName from "./SectionName";
 import Image from "next/image";
-import Carousel from "./CarouselComponent";
-import { getSkillCards, getSkillsData } from "@/sanity/actions";
-import {skillCardsData, skillsData } from "@/lib/types";
+import Carousel from "./SkillsCarousel";
+import { getSkillsData } from "@/sanity/actions";
+import { skillsData } from "@/lib/types";
 import LinkButton from "./LinkButton";
 
 export const revalidate = 30;
@@ -12,7 +12,6 @@ const MySkills = async() => {
 
   const data: skillsData = await getSkillsData();
 
-  const cardsData: skillCardsData  = await getSkillCards();
 
 
   return (
@@ -49,7 +48,7 @@ const MySkills = async() => {
 
         <div className="flex flex-col  justify-center items-center gap-4">
           <p className="paragraph">Листай</p>
-          <Carousel cards={cardsData.skillsCards} variant="skills" />
+          <Carousel content={data.skillsCards} />
         </div>
       </div>
     </div>
