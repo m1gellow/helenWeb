@@ -1,32 +1,33 @@
 // app/(root)/(home)/page.tsx
 import About from "@/components/About";
-import Blog from "@/components/Blog";
+// import Blog from "@/components/Blog";
 import Contacts from "@/components/Contacts";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MySkills from "@/components/MySkills";
 import Review from "@/components/Review";
-import { getBlogs, getHeaderData } from "@/sanity/actions";
+import { getHeaderData } from "@/sanity/actions";
 
 import React from "react";
 
 export const revalidate = 30;
 
 // Определяем Props с использованием Promise для searchParams
-interface Props {
-  searchParams: Promise<{ [key: string]: string | undefined }>;
-}
+// interface Props {
+//   searchParams: Promise<{ [key: string]: string | undefined }>;
+// }
+// { searchParams }: Props
 
-const Home = async ({ searchParams }: Props) => {
+const Home = async () => {
   // Ожидаем разрешения searchParams
-  const params = await searchParams;
+  // const params = await searchParams;
 
   const headerData = await getHeaderData();
 
-  const posts = await getBlogs({
-    query: params?.query || "",
-    page: "1"
-  });
+  // const posts = await getBlogs({
+  //   query: params?.query || "",
+  //   page: "1"
+  // });
 
   return (
     <main>
@@ -40,9 +41,9 @@ const Home = async ({ searchParams }: Props) => {
         <section id="skills">
           <MySkills />
         </section>
-        <section id="blog">
+        {/* <section id="blog">
           <Blog posts={posts} />
-        </section>
+        </section> */}
         <section id="review">
           <Review />
         </section>

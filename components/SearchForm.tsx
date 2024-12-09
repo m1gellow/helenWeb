@@ -25,11 +25,8 @@ const SearchForm = () => {
           })
         } else {
           newUrl = formUrlQuery({
-              params: searchParams.toString(),
-              keysToRemove: ['query'],
-              key: 'newKey', // Replace with the actual key you want to set
-              value: 'newValue' // Replace with the actual value you want to set
-     
+            params: searchParams.toString(),
+            keysToRemove: ['query']
           })
         }
 
