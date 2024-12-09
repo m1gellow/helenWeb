@@ -5,6 +5,8 @@ import { getAboutMeData } from "@/sanity/actions";
 import LinkButton from "./LinkButton";
 import { AboutMeData } from "@/lib/types";
 
+export const revalidate = 30;
+
 const About = async () => {
   const data: AboutMeData = await getAboutMeData();
 

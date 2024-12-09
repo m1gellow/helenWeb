@@ -6,27 +6,28 @@ import {
   CardDescription,
   CardFooter,
 } from "@/components/ui/card";
-import Teacher from "../app/Teacher.jpg";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import Link from "next/link";
 
 interface BlogCardProps {
-  imageUrl?: string;
+  imageUrl: string;
   title: string;
   description: string;
   buttonText: string;
-  onButtonClick?: () => void;
+  slug: string;
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({
   title,
   description,
   buttonText,
+  slug,
+  imageUrl
 }) => {
   return (
-    <Card className="blogCard p-4 ">
-      <Image alt="blog image" src={Teacher} className="rounded-[35px]" />
+    <Card className="blogCard p-4 flex-col flex-center">
+      <Image alt="blog image" src={imageUrl} width={400} height={400} objectFit="cover" className="rounded-[35px]" />
       <CardHeader className="p-4">
         <CardTitle className="heading2">{title}</CardTitle>
         <CardDescription className="body-text line-clamp-3">
@@ -34,7 +35,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
         </CardDescription>
       </CardHeader>
       <CardFooter className="flex justify-center p-4">
-        <Link href={'/post/1'}>
+        <Link href={`/post/${slug}`}>
           {" "}
           <Button>{buttonText}</Button>
         </Link>

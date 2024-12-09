@@ -1,6 +1,6 @@
 import { Rule } from "sanity"
 
-export const SkillCard = {
+ export const SkillCard = {
     name: "skillCard",
     title: "skillCard",
     type: "document",

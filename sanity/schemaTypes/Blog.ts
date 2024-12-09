@@ -1,4 +1,4 @@
-export const Blog = {
+ export const Blog = {
     name: "blog",
     type: "document",
     title: "Blog",
@@ -22,17 +22,9 @@ export const Blog = {
             title: "Time of Reading blog post"
         },
         {
-            name: "titleImages",
-            type: "array",
-            title: "Images of the blog post",
-            of:[
-                {
-                    type: "image",
-                    options:{
-                        hotspot: true
-                    }
-                }
-            ] 
+            name: "image",
+            type: "image",
+            title: "Image of the blog post",
         },
         {
             name: "smallDescription",

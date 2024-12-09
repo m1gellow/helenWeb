@@ -46,3 +46,12 @@ export interface reviewCard{
   image: string;
   reviewContent: string;
 }
+export interface BlogPost{
+  title: string;
+  image: string;
+  smallDescription: string;
+  content: TypedObject[],
+  slug: string;
+
+
+}

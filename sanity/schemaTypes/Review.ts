@@ -1,6 +1,6 @@
 import { Rule } from "sanity";
 
-export const Review = {
+ export const Review = {
     name: "review",
     title: "review",
     type: "document",

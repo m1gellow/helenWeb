@@ -5,7 +5,7 @@ import ReviewCarousel from "./ReviewCarousel";
 
 
 
-
+export const revalidate = 30;
 const Review = async() => {
 
   const data = await getReviewData();

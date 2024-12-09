@@ -1,3 +1,4 @@
+// app/(root)/(home)/page.tsx
 import About from "@/components/About";
 import Blog from "@/components/Blog";
 import Contacts from "@/components/Contacts";
@@ -5,13 +6,27 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MySkills from "@/components/MySkills";
 import Review from "@/components/Review";
-import { getHeaderData } from "@/sanity/actions";
+import { getBlogs, getHeaderData } from "@/sanity/actions";
 
 import React from "react";
 
 export const revalidate = 30;
-const Home = async () => {
+
+// Определяем Props с использованием Promise для searchParams
+interface Props {
+  searchParams: Promise<{ [key: string]: string | undefined }>;
+}
+
+const Home = async ({ searchParams }: Props) => {
+  // Ожидаем разрешения searchParams
+  const params = await searchParams;
+
   const headerData = await getHeaderData();
+
+  const posts = await getBlogs({
+    query: params?.query || "",
+    page: "1"
+  });
 
   return (
     <main>
@@ -26,7 +41,7 @@ const Home = async () => {
           <MySkills />
         </section>
         <section id="blog">
-          <Blog />
+          <Blog posts={posts} />
         </section>
         <section id="review">
           <Review />

@@ -1,5 +1,6 @@
 import { groq } from "next-sanity"
 import { client } from "./lib/client"
+import { buildQuery } from "./utils";
 
 export const getHeaderData = async() => {
     try{
@@ -82,6 +83,56 @@ export const getReviewData = async() => {
  }catch(err){
      console.log(err)
  }
+}
+
+
+interface GetResorcesParams{
+  query: string;
+  page: string;
+}
+
+
+export const getBlogs = async(params: GetResorcesParams) =>{
+  const {query, page} = params;
+
+  try{
+    const blogs = await client.fetch(
+      groq`${buildQuery({
+        type: 'blog',
+        query,
+        page: parseInt(page),
+      })}{
+       title,
+     "slug":slug.current,
+    "image": image.asset->url,
+      smallDescription,
+      content
+      }`
+    );
+
+    return blogs
+  }catch(err){
+    console.log(err)
+  }
+
+}
+export const getPostDataByTag = async(slug: string) =>{
+  try{
+    const blogs = await client.fetch(
+      groq`*[_type == "blog" && slug.current == "${slug}"]{
+    title,
+     "slug":slug.current,
+    "image": image.asset->url,
+      smallDescription,
+      content
+}[0]`
+    );
+
+    return blogs
+  }catch(err){
+    console.log(err)
+  }
+
 }
 
 
