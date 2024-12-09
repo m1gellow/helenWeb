@@ -92,6 +92,12 @@ interface GetResorcesParams{
 }
 
 
+
+
+
+
+
+
 export const getBlogs = async(params: GetResorcesParams) =>{
   const {query, page} = params;
 
