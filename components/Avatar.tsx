@@ -13,6 +13,7 @@ const Avatar: React.FC<AvatarProps> = ({ src }) => {
         className="rounded-full"
         width={50}
         height={50}
+        loading="lazy"
         alt="avatar"
       />
     </>

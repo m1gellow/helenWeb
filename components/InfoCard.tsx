@@ -34,7 +34,7 @@ const InfoCard: React.FC<InfoCardProps> = async(props) => {
           <div className="flex-col flex items-center justify-center gap-8">
               <Avatar src={image}/>
             <CardDescription>
-              <p className="base-regular">{description}</p>
+              <p className="body-text">{description}</p>
             </CardDescription>
             <CardTitle>
               <h2 className="">{title}</h2>

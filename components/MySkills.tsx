@@ -29,6 +29,7 @@ const MySkills = async() => {
               src={data.image}
               alt="My skills image"
               fill
+              loading="lazy"
               style={{ objectFit: 'cover' }}
               className="rounded-xl"
             />

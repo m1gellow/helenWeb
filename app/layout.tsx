@@ -14,8 +14,11 @@ const ptSerif = PT_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Helen web",
-  description: "Hello i'am helen",
+  title:{
+    default: "Helen blog",
+    template: "%s | Helen blog"
+  },
+  description: "Я репертитор со стажем!"
 };
 
 export default function RootLayout({

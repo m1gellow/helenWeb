@@ -1,7 +1,7 @@
 import React from "react";
 import SectionName from "./SectionName";
 import { getReviewData } from "@/sanity/actions";
-import ReviewCarousel from "./ReviewCarousel";
+const ReviewCarousel = React.lazy(() => import('./ReviewCarousel'))
 
 
 

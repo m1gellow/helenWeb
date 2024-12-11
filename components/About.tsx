@@ -27,6 +27,7 @@ const About = async () => {
               alt="about image"
               style={{ objectFit: 'cover' }}
               fill
+              loading="lazy"
               className="rounded-xl"
             />
           </div>

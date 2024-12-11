@@ -16,7 +16,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({href, text, variant}) => {
  
     if(href){
         return (
-            <Link href={href} target='_blank'>
+            <Link href={href}>
             <Button variant={variant}>{text}</Button>
             </Link>
         )

@@ -4,7 +4,22 @@ import { Button } from '@/components/ui/button';
 import { getPostDataByTag } from '@/sanity/actions';
 import { BlogPost } from '@/lib/types';
 import { PortableText } from 'next-sanity';
+import { Metadata } from 'next';
 
+
+type tParams = Promise<{slug: string}>
+
+export async function generateMetadata(props: {
+  params: tParams;
+}): Promise<Metadata> {
+  const { slug } = await props.params;
+  const data: BlogPost = await getPostDataByTag(slug);
+
+  return {
+    title: data.title,
+    description: data.smallDescription,
+  };
+}
 
 type Props = Promise<{slug: string}>
 

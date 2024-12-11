@@ -33,7 +33,7 @@ const CustomCursor = () => {
         z: 20,
       }}
     >
-      <Image alt="cursor" src={Cursor} className="cursor" />
+      <Image alt="cursor" loading="eager" src={Cursor} className="cursor" />
     </motion.div>
   );
 };

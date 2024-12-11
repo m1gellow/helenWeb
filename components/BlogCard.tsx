@@ -27,7 +27,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
 }) => {
   return (
     <Card className="blogCard p-4 flex-col flex-center">
-      <Image alt="blog image" src={imageUrl} width={400} height={400} objectFit="cover" className="rounded-[35px]" />
+      <Image alt="blog image" src={imageUrl} width={400} loading="lazy" height={400} objectFit="cover" className="rounded-[35px]" />
       <CardHeader className="p-4">
         <CardTitle className="heading2">{title}</CardTitle>
         <CardDescription className="body-text line-clamp-3">
