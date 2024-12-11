@@ -41,6 +41,8 @@ const page = async({params}: {params: Props}) => {
               alt="My skills image"
               layout="fill"
               objectFit="cover"
+              priority
+              loading='lazy'
               className="rounded-xl"
             />
           </div>
