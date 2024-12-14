@@ -4,27 +4,28 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [visible, setVisible] = useState(true);
+  const pathname = usePathname();
 
   let lastScrollY = 0;
 
   const handleScroll = () => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const currentScrollY = window.scrollY;
       setVisible(lastScrollY > currentScrollY || currentScrollY < 10);
       lastScrollY = currentScrollY;
     }
-  }
-
+  };
 
   useEffect(() => {
-      window.addEventListener('scroll', handleScroll);
-      return () => {
-          window.removeEventListener('scroll', handleScroll);
-      };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const handleOpenMenu = () => {
@@ -33,28 +34,38 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className={`flex-center bg-white border-b fixed z-20 top-0 w-full py-5 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'}`}>
+    <nav
+      className={`flex-center bg-white border-b fixed z-20 top-0 w-full py-5 ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full"}`}
+    >
       <div className="flex-between mx-auto w-full max-w-screen-2xl px-4 ">
-        <h1 className="font-poppins font-bold text-3xl">Logo</h1>
+        <h1 className="font-poppins font-bold text-3xl">
+          <Link href={'/'}>Logo</Link>
+        </h1>
 
         <ul className=" hidden lg:flex-center body-text xl:gap-[60px] lg:gap-[40px] ">
           <li>
-            <Link href={pageConfig.home}>Домой</Link>
+            <Link href={pathname !== "/" ? "/" : pageConfig.home}>Домой</Link>
           </li>
           <li>
-            <Link href={pageConfig.about}>О нас</Link>
+            <Link href={pathname !== "/" ? "/" : pageConfig.about}>О нас</Link>
           </li>
           <li>
-            <Link href={pageConfig.review}>Отзывы</Link>
+            <Link href={pathname !== "/" ? "/" : pageConfig.review}>
+              Отзывы
+            </Link>
           </li>
           <li>
-            <Link href={pageConfig.skills}>Навыки</Link>
+            <Link href={pathname !== "/" ? "/" : pageConfig.skills}>
+              Навыки
+            </Link>
           </li>
           <li>
-            <Link href={pageConfig.blog}>Блог</Link>
+            <Link href={pathname !== "/" ? "/" : pageConfig.blog}>Блог</Link>
           </li>
           <li>
-            <Link href={pageConfig.contacts}>Контакты</Link>
+            <Link href={pathname !== "/" ? "/" : pageConfig.contacts}>
+              Контакты
+            </Link>
           </li>
         </ul>
         <div className="lg:hidden flex-center flex-col ">
@@ -71,31 +82,39 @@ const Navbar: React.FC = () => {
         </Button>
       </div>
       {isOpen && (
-        <div className="mobileMenu ">
+        <div className="mobileMenu z-50">
           <div className="flex justify-end p-4">
             <button onClick={handleOpenMenu} className="text-xl">
               <X color={"#4CAF50"} size={47} />
             </button>
           </div>
           <ul className="flex flex-col text-3xl gap-[40px] bg-white items-center mt-10 space-y-4">
-          <li>
-            <Link href={pageConfig.home}>Домой</Link>
-          </li>
-          <li>
-            <Link href={pageConfig.about}>О нас</Link>
-          </li>
-          <li>
-            <Link href={pageConfig.review}>Отзывы</Link>
-          </li>
-          <li>
-            <Link href={pageConfig.skills}>Навыки</Link>
-          </li>
-          <li>
-            <Link href={pageConfig.blog}>Блог</Link>
-          </li>
-          <li>
-            <Link href={pageConfig.contacts}>Контакты</Link>
-          </li>
+            <li>
+              <Link href={pathname !== "/" ? "/" : pageConfig.home}>Домой</Link>
+            </li>
+            <li>
+              <Link href={pathname !== "/" ? "/" : pageConfig.about}>
+                О нас
+              </Link>
+            </li>
+            <li>
+              <Link href={pathname !== "/" ? "/" : pageConfig.review}>
+                Отзывы
+              </Link>
+            </li>
+            <li>
+              <Link href={pathname !== "/" ? "/" : pageConfig.skills}>
+                Навыки
+              </Link>
+            </li>
+            <li>
+              <Link href={pathname !== "/" ? "/" : pageConfig.blog}>Блог</Link>
+            </li>
+            <li>
+              <Link href={pathname !== "/" ? "/" : pageConfig.contacts}>
+                Контакты
+              </Link>
+            </li>
           </ul>
         </div>
       )}

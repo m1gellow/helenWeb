@@ -42,7 +42,7 @@ const page = async({params}: {params: Props}) => {
               layout="fill"
               objectFit="cover"
               priority
-              loading='lazy'
+              loading='eager'
               className="rounded-xl"
             />
           </div>

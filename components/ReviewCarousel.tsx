@@ -19,7 +19,7 @@ interface CarouselProps {
 const ReviewCarousel: React.FC<CarouselProps> = ({content}) => {
 
   return (
-    <UIDCarousel className="md:w-full px-5 max-w-sm  lg:max-w-full">
+    <UIDCarousel className="md:w-full px-5 max-w-sm h-full  lg:max-w-full">
       <CarouselContent className="-ml-1">
         {content?.map((info, idx) => (
         
@@ -27,7 +27,7 @@ const ReviewCarousel: React.FC<CarouselProps> = ({content}) => {
                <InfoCard
                variant="review"
             title={info.name}
-            description={info.reviewContent}
+            description={"получилось очень классно, удачно нашли нашего репетитора классно советую всем кто есть рядом сейчас хотелось бы попрпосить сделать глубокий вдох и расслабиться. так как работы будет много думаю что мы сможет пройти через все трудности, я в вас верю друзья мои"}
             image={info.image}
             />
           </CarouselItem>

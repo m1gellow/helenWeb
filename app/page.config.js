@@ -1,5 +1,5 @@
 class PageConfig{
-    home = "#header";
+    home = "/";
     about = "#about";
     skills = "#skills";
     review = "#review";
