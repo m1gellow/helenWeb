@@ -22,12 +22,14 @@ interface Props {
 const Home = async ({ searchParams }: Props) => {
   const params = await searchParams;
 
-  const headerData = await getHeaderData();
+  const headerDataPromise = await getHeaderData();
 
-  const posts = await getBlogs({
+  const postsPromise = await getBlogs({
     query: params?.query || "",
     page: "1",
   });
+
+  const [headerData, posts] = await Promise.all([headerDataPromise, postsPromise])
 
   return (
     <main>
