@@ -6,7 +6,7 @@ const MySkills = React.lazy(() => import('@/components/MySkills'));
 const Review = React.lazy(() => import('@/components/Review'));
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import { getBlogs, getHeaderData } from "@/sanity/actions";
+import { getBlogs } from "@/sanity/actions";
 import { domAnimation, LazyMotion } from "framer-motion";
 
 import React from "react";
@@ -20,23 +20,23 @@ interface Props {
 }
 
 const Home = async ({ searchParams }: Props) => {
+  
   const params = await searchParams;
 
-  const headerDataPromise = await getHeaderData();
 
-  const postsPromise = await getBlogs({
+  const posts = await getBlogs({
     query: params?.query || "",
     page: "1",
   });
 
-  const [headerData, posts] = await Promise.all([headerDataPromise, postsPromise])
+
 
   return (
     <main>
       <LazyMotion features={domAnimation}>
         <div className="relative z-10">
           <section id="header">
-            <Header data={headerData} />
+            <Header/>
           </section>
           <section id="about">
             <About />
