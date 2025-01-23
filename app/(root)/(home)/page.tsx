@@ -1,42 +1,36 @@
-
 import About from "@/components/About";
-const Blog = React.lazy(() => import('@/components/Blog'));
-const Contacts = React.lazy(() => import('@/components/Contacts'));
-const MySkills = React.lazy(() => import('@/components/MySkills'));
-const Review = React.lazy(() => import('@/components/Review'));
-import Footer from "@/components/Footer";
+import dynamic from "next/dynamic"; 
+const Blog = dynamic(() => import('@/components/Blog'));
+const Contacts = dynamic(() => import('@/components/Contacts'));
+const MySkills = dynamic(() => import('@/components/MySkills'));
+const Review = dynamic(() => import('@/components/Review'));
+const Footer = dynamic(() => import('@/components/Footer'));
 import Header from "@/components/Header";
 import { getBlogs } from "@/sanity/actions";
 import { domAnimation, LazyMotion } from "framer-motion";
-
 import React from "react";
 
-
-
-export const revalidate = 30;
 
 interface Props {
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }
 
+export const revalidate = 30;
+
+
 const Home = async ({ searchParams }: Props) => {
-  
-  const params = await searchParams;
-
-
+  const resolvedSearchParams = await searchParams;
   const posts = await getBlogs({
-    query: params?.query || "",
+    query: resolvedSearchParams?.query || "",
     page: "1",
   });
-
-
 
   return (
     <main>
       <LazyMotion features={domAnimation}>
         <div className="relative z-10">
           <section id="header">
-            <Header/>
+            <Header />
           </section>
           <section id="about">
             <About />
